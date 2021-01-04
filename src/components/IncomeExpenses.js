@@ -3,7 +3,9 @@ import { GlobalContext } from '../contexts/GlobalState';
 
 export const IncomeExpenses = () => {
 
-  const {transactions} = useContext(GlobalContext);
+  console.log('$ incomeExpenses.js > start');
+
+  const { transactions } = useContext(GlobalContext);
 
   const amounts = transactions.map(transaction => transaction.amount);
 
@@ -16,7 +18,7 @@ export const IncomeExpenses = () => {
     amounts.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) * -1
   ).toFixed(2);
 
-	return (
+  return (
     <div className="inc-exp-container">
       <div>
         <h4>Income</h4>
@@ -27,7 +29,7 @@ export const IncomeExpenses = () => {
         <p className="money minus">{expense}</p>
       </div>
     </div>
-	)
+  )
 }
 
 

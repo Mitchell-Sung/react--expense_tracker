@@ -10,6 +10,9 @@ import { GlobalProvider } from './contexts/GlobalState';
 import './App.css';
 
 function App() {
+
+  console.log('$ app.js > start');
+
   return (
     <GlobalProvider>
       <Header />
@@ -18,7 +21,7 @@ function App() {
         <IncomeExpenses />
         <TransactionList />
         <AddTransaction />
-      </div>            
+      </div>
     </GlobalProvider>
   );
 }

@@ -3,6 +3,8 @@ import { GlobalContext } from '../contexts/GlobalState';
 
 export const AddTransaction = () => {
 
+  console.log('$ AddTransaction.js > start');
+
   const [text, setText] = useState('');
   const [amount, setAmount] = useState(0);
 
@@ -14,11 +16,16 @@ export const AddTransaction = () => {
     const newTransaction = {
       id: Math.floor(Math.random() * 100000000),
       text,
+      // There was a data type error from string to number.
+      // ask sangmin
       amount: +amount
     }
 
     addTransaction(newTransaction);
   }
+
+  // htmlFor:
+  // since for is a reserved word in js, react elements use 'htmlFor' instead.
 
   return (
     <div>
@@ -50,14 +57,3 @@ export const AddTransaction = () => {
     </div>
   )
 }
-
-{/* 
-    -- htmlFor:
-      since for is a reserved word in js, react elements use 'htmlFor' instead.
-
-    -- hook:
-      + import { useState }
-    
-    -- useState()
-      +
- */}

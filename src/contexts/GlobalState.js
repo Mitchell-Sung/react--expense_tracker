@@ -10,16 +10,21 @@ const initialState = {
 		{ id: 4, text: 'Camera', amount: 150 }
 	]
 }
+console.log('$ GlobalState.js > initialState > bye');
 
-// Create context
+// Create context API
 export const GlobalContext = createContext(initialState);
+console.log('$ GlobalState.js > globalContext() > create_context');
 
 // Provider component
 export const GlobalProvider = ({ children }) => {
+	console.log('$ GlobalState.js > globalProvider() > start');
+	// dispatch == dispatchAction()
 	const [state, dispatch] = useReducer(AppReducer, initialState);
 
 	// Actions
 	function deleteTransaction(id) {
+		console.log('$ GlobalState.js > deleteTransaction() > start');
 		dispatch({
 			type: 'DELETE_TRANSACTION',
 			payload: id
@@ -27,6 +32,7 @@ export const GlobalProvider = ({ children }) => {
 	}
 
 	function addTransaction(transaction) {
+		console.log('$ GlobalState.js > addTransaction() > start');
 		dispatch({
 			type: 'ADD_TRANSACTION',
 			payload: transaction

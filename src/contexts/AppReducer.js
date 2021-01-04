@@ -1,5 +1,8 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state, action) => {
+
+	console.log('$ AppReducer.js > start');
+
 	switch (action.type) {
 		case 'DELETE_TRANSACTION':
 			return {

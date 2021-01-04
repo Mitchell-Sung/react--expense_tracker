@@ -3,6 +3,8 @@ import { GlobalContext } from '../contexts/GlobalState';
 
 export const Transaction = ({ transaction }) => {
 
+	console.log('$ transaction.js > start');
+
 	const { deleteTransaction } = useContext(GlobalContext);
 
 	// console result = '+' and '-'
